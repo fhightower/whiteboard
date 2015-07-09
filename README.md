@@ -1,2 +1,2 @@
-# whiteboard
-Simple shareable whiteboard
+# Whiteboard
+Shareable whiteboard
