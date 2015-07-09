@@ -1,0 +1,11 @@
+/*
+|Burningsoul
+|whiteboard
+*/
+body,html{margin: 0px;
+padding: 0px;border: 0px;
+background: url('../image/background-grid.png');
+font-family: Verdana, Geneva, sans-serif;
+}
+.topbar{ background: #FFFFFF;height: 60px; width: 100%;padding: 2px;}
+.notify{ margin-top: 10%; width: 100%; text-align: center; padding: 10px; font-size: 40px; background-color: #FFFFFF; color: #0CF;}
