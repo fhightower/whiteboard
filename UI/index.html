@@ -2,15 +2,18 @@
 <html>
 <head>
 	<title>Whiteboard</title>
-	       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	       <script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+	       <script type="text/javascript" src="js/angular.min.js"></script>
+	       <script type="text/javascript" src="js/angular-ui-router.min.js"></script>
 	       <script type="text/javascript" src="js/core.js"></script>
 	       <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<div class="topbar">
-	<img src="image/logo_60.png">
+<div class="container" ng-app="core">
+	<header ng-include="'template/header.html'"></header>
+	<div ui-view></div>
+	<footer ng-include="'template/footer.html'"></footer>
 </div>
-<div class="notify">Under Development</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
 </body>
 </html>
