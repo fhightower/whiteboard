@@ -9,10 +9,18 @@
 </head>
 <body>
 <div class="container" ng-app="core">
-	<header ng-include="'template/header.html'"></header>
-	<div ui-view></div>
-	<footer ng-include="'template/footer.html'"></footer>
+	<div class='whiteboard' ui-view></div>
+	<div class="leftbar">
+<img src="../image/logo_60.png">
+	</div>
+	
 </div>
+<div class="info-bg">
+  <div class="info">
+  	<img src="../image/logo_60.png" style="float:left;"><span style="line-height:50px;font-size:2em; float:left;padding:5px;">Sharable Whiteboard</span> 
+  	<br>
+  </div>
+</div>	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
 </body>
