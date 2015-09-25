@@ -3,13 +3,13 @@
 
 <div class="toolbar">
     <ul style="list-style: none; display: inline">
-        <li ng-click="clearPage()" style="margin-left: 0;" class="icon"><i class="fa fa-file-o"></i></li>
+        <br>
+       
+        <li title="Pencil" ng-class="{ active: pencilTool }" ng-click="changeTool('pencilTool')" class="icon pencil-icon"><i class="fa fa-pencil"></i></li>
 
-        <li ng-class="{ active: pencilTool }" ng-click="changeTool('pencilTool')" class="icon pencil-icon"><i class="fa fa-pencil"></i></li>
-
-        <li ng-class="{ active: eraserTool }" ng-click="changeTool('eraserTool')" class="icon eraser-icon"><i class="fa fa-eraser"></i></li>
-
-        <li ng-class="{ active: textTool }" ng-click="changeTool('textTool')" class="icon text-icon"></li>
+        <li title="Eraser" ng-class="{ active: eraserTool }" ng-click="changeTool('eraserTool')" class="icon eraser-icon"><i class="fa fa-eraser"></i></li>
+<li title="New" ng-click="clearPage()" style="margin-left: 0;" class="icon"><i class="fa fa-file-o"></i></li>
+        <li title="Text" ng-class="{ active: textTool }" ng-click="changeTool('textTool')" class="icon text-icon"><i class="fa fa-file-text"></i></li>
     </ul>
 
     <ul class="color-pallet">

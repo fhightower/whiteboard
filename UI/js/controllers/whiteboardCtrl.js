@@ -106,10 +106,8 @@ angular.module('Whiteboard').controller('whiteboardCtrl', ['$scope', 'Socket', '
             });
         };
 
-
-
         $scope.createShareLink = function() {
-           $("#sharelink").fadeIn(100).html(window.location.origin+ "/#/"+ $scope.board_id);
+           $("#sharelink").fadeIn(500).html(window.location.origin+ "/#/"+ $scope.board_id);
         }
 
         $scope.$on('whiteboard_draw', function(e, data) {

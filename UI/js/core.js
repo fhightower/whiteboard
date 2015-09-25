@@ -24,6 +24,3 @@ function rand_id(){
 
     return text;
 }
-function hideinfo(){
-  $(".info-bg").hide();
-}
