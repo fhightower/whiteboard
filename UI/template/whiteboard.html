@@ -1,0 +1,58 @@
+    <div class="leftbar">
+<img src="../image/logo_60.png">
+
+<div class="toolbar">
+    <ul style="list-style: none; display: inline">
+        <br>
+       
+        <li title="Pencil" ng-class="{ active: pencilTool }" ng-click="changeTool('pencilTool')" class="icon pencil-icon"><i class="fa fa-pencil"></i></li>
+
+        <li title="Eraser" ng-class="{ active: eraserTool }" ng-click="changeTool('eraserTool')" class="icon eraser-icon"><i class="fa fa-eraser"></i></li>
+<li title="New" ng-click="clearPage()" style="margin-left: 0;" class="icon"><i class="fa fa-file-o"></i></li>
+        <li title="Text" ng-class="{ active: textTool }" ng-click="changeTool('textTool')" class="icon text-icon"><i class="fa fa-file-text"></i></li>
+    </ul>
+
+    <ul class="color-pallet">
+        <li ng-class="{ active: colorOne}" ng-click="changeColor('colorOne')" class="one"></li>
+        
+        <li ng-class="{ active: colorTwo }" ng-click="changeColor('colorTwo')" class="two"></li>
+        
+        <li ng-class="{ active: colorThree }" ng-click="changeColor('colorThree')" class="three"></li>
+        
+        <li ng-class="{ active: colorFour }" ng-click="changeColor('colorFour')" class="four"></li>
+
+        <li ng-class="{ active: colorFive }" ng-click="changeColor('colorFive')" class="five"></li>
+
+        <li ng-class="{ active: colorSix }" ng-click="changeColor('colorSix')" class="six"></li>
+
+        <li ng-class="{ active: colorSeven }" ng-click="changeColor('colorSeven')" class="seven"></li>
+
+        <li ng-class="{ active: colorEight }" ng-click="changeColor('colorEight')" class="eight"></li>
+    </ul>
+
+    <ul class="thickness-pallet">
+        <li ng-click="changePenSize('finePen')" ng-class="{active: finePen}"class='one'></li>
+        
+        <li ng-class="{active: thinPen}" ng-click="changePenSize('thinPen')" class='two'></li>
+
+        <li ng-class="{active: mediumPen}" ng-click="changePenSize('mediumPen')" class="three"></li>
+
+        <li ng-class="{active: thickPen}" ng-click="changePenSize('thickPen')" class="four"></li>
+    </ul>
+
+    <span class="status"><a ng-click="createShareLink()" href="" class="btn btn-primary tooltip" title="Link has been copied to your clipboard. Share this link with your friends."><i class="fa fa-link"></i> </a>
+    &nbsp
+
+
+</div>
+    </div>
+<canvas whiteboard class="board" id="myCanvas" resize="true">
+    
+</canvas>
+<div id="sharelink"></div>
+<script>
+      $('.tooltip').tooltipster({
+        trigger: 'click'
+      });
+      
+</script>
