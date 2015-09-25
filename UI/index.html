@@ -1,27 +1,25 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Whiteboard</title>
-	       <script type="text/javascript" src="js/angular.min.js"></script>
-	       <script type="text/javascript" src="js/angular-ui-router.min.js"></script>
-	       <script type="text/javascript" src="js/core.js"></script>
-	       <link rel="stylesheet" type="text/css" href="css/style.css">
+ <html class="no-js" ng-app="Whiteboard"> 
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Whiteboard</title>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script>
+      <script type="text/javascript" src="js/angular-ui-router.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script type="text/javascript" src="js/core.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
-<div class="container" ng-app="core">
-	<div class='whiteboard' ui-view></div>
-	<div class="leftbar">
-<img src="../image/logo_60.png">
-	</div>
-	
-</div>
-<div class="info-bg">
-  <div class="info">
-  	<img src="../image/logo_60.png" style="float:left;"><span style="line-height:50px;font-size:2em; float:left;padding:5px;">Sharable Whiteboard</span> 
-  	<br>
-  </div>
-</div>	
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
-</body>
+    <body>
+        <div class='container' ui-view></div>
+         <script type="text/javascript" src="js/controllers/whiteboardCtrl.js"></script>
+         <!-- Directives -->
+         <script src="js/whiteboardDirective.js"></script>
+         <!-- END -->
+         <!-- Services -->
+         <script src="js/services/socketservice.js"></script>
+         <!-- End -->
+         <script src="http://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.18/paper-full.min.js"></script>
+         <script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+    </body>
 </html>
