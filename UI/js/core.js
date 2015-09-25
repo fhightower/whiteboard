@@ -2,21 +2,21 @@
 |Shareable Whiteboard
 |Burningsoul
 */
-angular.module('core',['ui.router'])
+angular.module('Whiteboard',['ui.router'])
        .config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$stateProvider){
 
-       	$stateProvider
+        $stateProvider
                 .state('/', {
                     url: '/:id',
                     templateUrl: 'template/whiteboard.html',
-                    ontroller: 'WhiteboardCtrl'
+                    controller: 'whiteboardCtrl'
                 });
          $urlRouterProvider.otherwise('/'+rand_id());
        }])
       
 
 function rand_id(){
-	var text = "";
+    var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
     for (var i = 0; i < 6; i++)
@@ -24,4 +24,6 @@ function rand_id(){
 
     return text;
 }
-$(".info-bg").click(function(){$(".info-bg").hide()});
+function hideinfo(){
+  $(".info-bg").hide();
+}
