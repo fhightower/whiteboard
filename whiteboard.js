@@ -9,8 +9,6 @@ var whiteboard = require('http').createServer(function(request, response) {
 });
 
 var io = require('socket.io')(whiteboard);
-var fs = require('fs');
-var _ = require('underscore');
 
 whiteboard.listen(process.env.PORT || 9999);
 var activeBoards = {};
