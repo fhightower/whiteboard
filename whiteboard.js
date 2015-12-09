@@ -82,4 +82,12 @@ io.on('connection', function(socket) {
             io.to(data.room).emit('clear_page', data);
         }
     });
+
+    //chat
+    socket.on('chat',function(data){
+        console.log('chat',data);
+         if(data.room){
+            io.to(data.room).emit('chat',data);
+         }
+    });
 });

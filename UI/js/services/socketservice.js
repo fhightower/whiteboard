@@ -2,6 +2,7 @@ angular.module('Whiteboard')
     .service('Socket', ['$q', '$rootScope',
         function($q, $rootScope) {
             var socket;
+            var names=["Jaataveda","Burningsoul","Savyasaachi","Ramon","kelva"];
 
             return {
                 join: function(board_id, user) {
@@ -17,9 +18,9 @@ angular.module('Whiteboard')
 
                     socket.emit('join_board', {
                         board_id: board_id || localStorage.board_id,
-                        name: user.name || localStorage.name || 'Mohammed'
+                        name: user.name || localStorage.name || Date.now()+'-'+names[Math.floor((Math.random() * names.length) + 1)]
                     });
-
+                    
                     return defer.promise;
                 },
                 create: function() {
@@ -33,7 +34,7 @@ angular.module('Whiteboard')
                     });
 
                     socket.emit('create_board', {
-                        name: 'lalla'
+                        name: Date.now()+'-'+names[Math.floor((Math.random() * names.length) + 1)]
                     });
 
                     return defer.promise;
@@ -63,7 +64,7 @@ angular.module('Whiteboard')
                         defer.resolve(socket);
                     } else {
                         this.join(room_id, {
-                            name: 'lalla'
+                            name: Date.now()+'-'+names[Math.floor((Math.random() * names.length) + 1)]
                         }).then(function(data) {
                             defer.resolve(socket);
                         });
