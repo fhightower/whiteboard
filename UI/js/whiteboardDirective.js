@@ -145,6 +145,10 @@ angular.module('Whiteboard').directive('whiteboard', ['Socket',
                     }
                 });
 
+                $scope.$on('chat',function(data){
+                    console.log(data);
+                });
+
                 $scope.$on('clear_page', function() {
                     paper.project.clear();
                     paper.view.draw();
