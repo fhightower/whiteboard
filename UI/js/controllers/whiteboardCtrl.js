@@ -114,11 +114,7 @@ angular.module('Whiteboard').controller('whiteboardCtrl', ['$scope', 'Socket', '
            $("#sharelink").fadeIn(500).html(window.location.origin+ "/#/"+ $scope.board_id);
 
         }
-        $scope.chat = function(e,data){
-            
-            Socket.send('chat',Date.now());
-            console.log();
-        }
+
 
         $scope.$on('whiteboard_draw', function(e, data) {
             data.room = $stateParams.id;
