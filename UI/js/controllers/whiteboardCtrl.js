@@ -41,6 +41,10 @@ angular.module('Whiteboard').controller('whiteboardCtrl', ['$scope', 'Socket', '
             socket.on('clear_page', function(data) {
                 $scope.$emit('clear_page', data);
             });
+
+            socket.on('chat', function(data){
+                $scope.$emit('chat',data);
+            });
         });
 
 
@@ -108,12 +112,15 @@ angular.module('Whiteboard').controller('whiteboardCtrl', ['$scope', 'Socket', '
 
         $scope.createShareLink = function() {
            $("#sharelink").fadeIn(500).html(window.location.origin+ "/#/"+ $scope.board_id);
+
         }
+
 
         $scope.$on('whiteboard_draw', function(e, data) {
             data.room = $stateParams.id;
             data.sender_id = $scope.me.socket_id;
             Socket.send('draw', data);
+
         });
 
     }

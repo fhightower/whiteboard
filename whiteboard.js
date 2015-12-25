@@ -59,17 +59,21 @@ io.on('connection', function(socket) {
 
             socket.join(data.board_id);
             io.to(data.board_id).emit('user_connected', activeBoards[data.board_id]);
+            io.to(data.board_id).emit('user_joined', data.name);
+
 
             socket.emit('connected_to_board', {
                 board_id: data.board_id,
-                user: user
+                user: user,
+                socket_id:socket.id
             });
         }
+         console.log("user joined-"+user.name+" @ "+data.board_id+"socid-"+socket.id);
     });
 
     socket.on('draw', function(data) {
         console.log('draw', data);
-        if (data.room) {
+         if (data.room) {
             io.to(data.room).emit('draw', data);
         }
     });
@@ -79,5 +83,13 @@ io.on('connection', function(socket) {
         if (data.room) {
             io.to(data.room).emit('clear_page', data);
         }
+    });
+
+    //chat
+    socket.on('chat',function(data){
+        console.log('chat',data);
+         if(data.room){
+            io.to(data.room).emit('chat',data);
+         }
     });
 });
