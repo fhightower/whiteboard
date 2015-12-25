@@ -6,11 +6,17 @@ angular.module('Whiteboard',['ui.router'])
        .config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$stateProvider){
 
         $stateProvider
-                .state('/', {
-                    url: '/:id',
-                    templateUrl: 'template/whiteboard.html',
-                    controller: 'whiteboardCtrl'
-                });
+             .state('privacypolicy', {
+                url: '/privacypolicy',
+                templateUrl: 'template/privacypolicy.html'
+            })
+            .state('/', {
+                url: '/:id',
+                templateUrl: 'template/whiteboard.html',
+                controller: 'whiteboardCtrl'
+            });
+    
+                
          $urlRouterProvider.otherwise('/'+rand_id());
        }])
       
