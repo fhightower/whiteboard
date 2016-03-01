@@ -30,3 +30,7 @@ function rand_id(){
 
     return text;
 }
+
+function setname(){
+    
+}

@@ -1,5 +1,6 @@
 var static = require('node-static');
 var file = new static.Server('./UI');
+var request   =     require('request');
 
 //Define
 var whiteboard = require('http').createServer(function(request, response) {
@@ -12,6 +13,11 @@ var io = require('socket.io')(whiteboard);
 
 whiteboard.listen(process.env.PORT || 9999);
 var activeBoards = {};
+
+var alive = setInterval(function(){ 
+request('http://api.burningsoul.in/moon');
+console.log('ping');
+ }, 100000);
 
 //socket connection
 

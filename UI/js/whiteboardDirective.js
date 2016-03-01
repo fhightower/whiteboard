@@ -124,8 +124,10 @@ angular.module('Whiteboard').directive('whiteboard', ['Socket',
                             activity: 'up'
                         });
                     }
-                }
-
+                };
+                $scope.$on('chat',function(ev,data){
+                    
+                });
 
                 $scope.$on('draw', function(ev, data) {
                     if ($scope.me.socket_id !== data.sender) {
